@@ -7,14 +7,14 @@ export default async function handler(req, res) {
   }
 
   const {
-    videoSessionId,
+    VideoCallid,
     agentEmail,
     conversationId
   } = req.body;
 
   console.log("===== 3RD PARTY PLATFORM API =====");
   console.log(JSON.stringify({
-    videoSessionId,
+    VideoCallid,
     agentEmail,
     conversationId
   }, null, 2));
@@ -22,7 +22,7 @@ export default async function handler(req, res) {
 
   return res.status(200).json({
     status: "SESSION_LINKED",
-    videoRoomUrl: `https://talk.brave.com/${videoSessionId}`,
+    videoRoomUrl: `https://talk.brave.com/${VideoCallid}`,
     assignedAgent: agentEmail
   });
 }
